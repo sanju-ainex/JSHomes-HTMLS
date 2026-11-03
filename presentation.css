@@ -1,0 +1,659 @@
+/* ==========================================================================
+   EXECUTIVE PRESENTATION HUB - CLIENT SHOWCASE
+   Dual Design Switcher, Interactive Device Frames & Architecture Comparison
+   EXECUTIVE CLIENT PRESENTATION SUITE — AUSTRALIA
+   High-Fashion Architecture Switcher, Responsive Frame & Comparison Matrix
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+  --hub-bg: #0B0E14;
+  --hub-surface: #131822;
+  --hub-card: #1B212E;
+  --hub-border: rgba(255, 255, 255, 0.08);
+  --hub-gold: #C5A880;
+  --hub-accent-blue: #3E8BFF;
+  --hub-text-main: #F2F4F8;
+  --hub-text-muted: #8E98A8;
+  --hub-font: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --hub-serif: 'Playfair Display', Georgia, serif;
+  --pitch-bg: #07080B;
+  --pitch-surface: #0E1017;
+  --pitch-card: #151821;
+  --pitch-gold: #D4AF37;
+  --pitch-gold-light: #EBD382;
+  --pitch-gold-wire: rgba(212, 175, 55, 0.25);
+  --pitch-sand: #C89B7B;
+  --pitch-text: #F3F4F8;
+  --pitch-text-muted: #8E98A8;
+  --pitch-border: rgba(255, 255, 255, 0.08);
+
+  --font-serif: 'Italiana', Georgia, serif;
+  --font-cinzel: 'Cinzel', Georgia, serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--hub-font);
+  background-color: var(--hub-bg);
+  color: var(--hub-text-main);
+  font-family: var(--font-body);
+  background-color: var(--pitch-bg);
+  color: var(--pitch-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(200, 155, 123, 0.03) 0%, transparent 45%);
+}
+
+/* ==========================================================================
+   Top Showcase Header & Client Deck Bar
+   ========================================================================== */
+.showcase-header {
+  background: var(--hub-surface);
+  border-bottom: 1px solid var(--hub-border);
+  padding: 1.2rem 3rem;
+
+  /* Header Suite */
+  .exec-header {
+    background: rgba(14, 16, 23, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--pitch-gold-wire);
+    padding: 1.4rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    backdrop-filter: blur(12px);
+  }
+
+  .showcase-brand {
+    .exec-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .showcase-title-box h1 {
+      .exec-title h1 {
+        font-family: var(--font-cinzel);
+        font-size: 1.15rem;
+        font-weight: 700;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+
+      .showcase-title-box p {
+        font-size: 0.72rem;
+        color: var(--hub-text-muted);
+
+        .exec-title p {
+          font-family: var(--font-mono);
+          font-size: 0.68rem;
+          letter-spacing: 0.2em;
+          color: var(--pitch-gold);
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+        }
+
+        .client-status-pill {
+          background: rgba(197, 168, 128, 0.15);
+          border: 1px solid rgba(197, 168, 128, 0.4);
+          color: var(--hub-gold);
+          padding: 0.35rem 0.85rem;
+          border-radius: 20px;
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+
+        /* Concept Tabs in Header */
+        .concept-toggle-bar {
+
+          /* Concept Tabs */
+          .exec-concept-switcher {
+            display: flex;
+            background: var(--hub-card);
+            background: var(--pitch-surface);
+            border: 1px solid var(--pitch-gold-wire);
+            padding: 0.35rem;
+            border-radius: 40px;
+            border: 1px solid var(--hub-border);
+          }
+
+          .concept-btn {
+            padding: 0.6rem 1.6rem;
+
+            .exec-concept-btn {
+              padding: 0.7rem 1.8rem;
+              border-radius: 30px;
+              border: none;
+              background: transparent;
+              color: var(--hub-text-muted);
+              font-size: 0.8rem;
+              font-weight: 600;
+              letter-spacing: 0.05em;
+              color: var(--pitch-text-muted);
+              font-family: var(--font-mono);
+              font-size: 0.78rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              font-weight: 700;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              gap: 0.6rem;
+              gap: 0.8rem;
+            }
+
+            .concept-btn.active {
+              background: var(--hub-gold);
+              color: #0B0E14;
+              box-shadow: 0 4px 15px rgba(197, 168, 128, 0.35);
+
+              .exec-concept-btn.active {
+                background: var(--pitch-gold);
+                color: #07080B;
+                box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+              }
+
+              .concept-btn:not(.active):hover {
+                .exec-concept-btn:not(.active):hover {
+                  color: #fff;
+                }
+
+                /* Device Viewport Selector */
+                .device-toggles {
+
+                  /* Viewport and Standalone Action */
+                  .exec-controls-group {
+                    display: flex;
+                    gap: 0.4rem;
+                    background: var(--hub-card);
+                    gap: 1.2rem;
+                    align-items: center;
+                  }
+
+                  .exec-device-trio {
+                    display: flex;
+                    background: var(--pitch-card);
+                    padding: 0.3rem;
+                    border-radius: 8px;
+                    border: 1px solid var(--hub-border);
+                    border: 1px solid var(--pitch-border);
+                    border-radius: 6px;
+                  }
+
+                  .device-btn {
+                    .exec-device-btn {
+                      background: transparent;
+                      border: none;
+                      color: var(--hub-text-muted);
+                      padding: 0.45rem 0.8rem;
+                      border-radius: 6px;
+                      font-size: 0.78rem;
+                      font-weight: 600;
+                      color: var(--pitch-text-muted);
+                      font-family: var(--font-mono);
+                      font-size: 0.72rem;
+                      padding: 0.4rem 0.85rem;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      transition: all 0.2s ease;
+                    }
+
+                    .device-btn.active,
+                    .device-btn:hover {
+                      background: rgba(255, 255, 255, 0.1);
+
+                      .exec-device-btn.active,
+                      .exec-device-btn:hover {
+                        background: rgba(255, 255, 255, 0.12);
+                        color: #fff;
+                      }
+
+                      .btn-open-tab {
+                        padding: 0.55rem 1.3rem;
+
+                        .exec-open-btn {
+                          padding: 0.6rem 1.4rem;
+                          border: 1px solid var(--pitch-gold);
+                          background: transparent;
+                          color: #fff;
+                          border: 1px solid rgba(255, 255, 255, 0.2);
+                          border-radius: 6px;
+                          font-size: 0.78rem;
+                          font-weight: 600;
+                          color: var(--pitch-gold);
+                          font-family: var(--font-mono);
+                          font-size: 0.75rem;
+                          letter-spacing: 0.15em;
+                          text-transform: uppercase;
+                          border-radius: 4px;
+                          text-decoration: none;
+                          display: inline-flex;
+                          align-items: center;
+                          gap: 0.5rem;
+                          text-decoration: none;
+                          transition: all 0.2s ease;
+                          transition: all 0.3s ease;
+                        }
+
+                        .btn-open-tab:hover {
+                          border-color: var(--hub-gold);
+                          color: var(--hub-gold);
+                          background: rgba(197, 168, 128, 0.1);
+
+                          .exec-open-btn:hover {
+                            background: var(--pitch-gold);
+                            color: #07080B;
+                          }
+
+                          /* ==========================================================================
+   Design Brief & Pitch Bar
+   ========================================================================== */
+                          .concept-info-banner {
+                            background: var(--hub-card);
+                            border-bottom: 1px solid var(--hub-border);
+                            padding: 1.2rem 3rem;
+
+                            /* Concept Telemetry Banner */
+                            .exec-banner {
+                              background: var(--pitch-surface);
+                              border-bottom: 1px solid var(--pitch-border);
+                              padding: 1.4rem 4rem;
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                            }
+
+                            .concept-details-left {
+                              display: flex;
+                              align-items: center;
+                              gap: 2.5rem;
+                            }
+
+                            .concept-name-tag {
+                              font-family: var(--hub-serif);
+                              font-size: 1.4rem;
+
+                              .exec-banner-title {
+                                font-family: var(--font-cinzel);
+                                font-size: 1.35rem;
+                                color: #fff;
+                              }
+
+                              .concept-aesthetic-pill {
+                                font-size: 0.75rem;
+                                color: var(--hub-gold);
+                                background: rgba(197, 168, 128, 0.1);
+                                padding: 0.25rem 0.75rem;
+                                border-radius: 4px;
+                              }
+
+                              .concept-target-info {
+                                .exec-banner-desc {
+                                  font-size: 0.82rem;
+                                  color: var(--hub-text-muted);
+                                  color: var(--pitch-text-muted);
+                                  margin-top: 0.2rem;
+                                }
+
+                                .quick-links-group {
+                                  .exec-quick-links {
+                                    display: flex;
+                                    gap: 0.8rem;
+                                    gap: 0.6rem;
+                                    align-items: center;
+                                  }
+
+                                  .quick-link-chip {
+                                    font-size: 0.75rem;
+                                    color: var(--hub-text-muted);
+                                    background: rgba(255, 255, 255, 0.05);
+
+                                    .exec-chip {
+                                      font-family: var(--font-mono);
+                                      font-size: 0.72rem;
+                                      color: var(--pitch-text-muted);
+                                      background: var(--pitch-card);
+                                      border: 1px solid var(--pitch-border);
+                                      padding: 0.35rem 0.85rem;
+                                      border-radius: 4px;
+                                      border: 1px solid var(--hub-border);
+                                      text-decoration: none;
+                                      transition: all 0.2s ease;
+                                    }
+
+                                    .quick-link-chip:hover {
+                                      border-color: var(--hub-gold);
+
+                                      .exec-chip:hover {
+                                        border-color: var(--pitch-gold);
+                                        color: #fff;
+                                      }
+
+                                      /* ==========================================================================
+   Interactive Device Frame & Live Preview Stage
+   ========================================================================== */
+                                      .preview-stage-container {
+
+                                        /* Interactive Device Frame Stage */
+                                        .exec-stage {
+                                          flex-grow: 1;
+                                          display: flex;
+                                          justify-content: center;
+                                          align-items: flex-start;
+                                          padding: 2.5rem 2rem;
+                                          background: radial-gradient(circle at 50% 30%, #151B27 0%, #0B0E14 100%);
+                                          min-height: 820px;
+                                          padding: 3rem 2rem;
+                                          min-height: 850px;
+                                        }
+
+                                        .device-frame-shell {
+                                          background: #181C26;
+
+                                          .exec-frame-bezel {
+                                            background: #11141D;
+                                            border-radius: 20px;
+                                            border: 8px solid #283042;
+                                            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+                                            border: 8px solid #202737;
+                                            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--pitch-gold-wire);
+                                            width: 100%;
+                                            max-width: 1440px;
+                                            height: 800px;
+                                            max-width: 1480px;
+                                            height: 820px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            overflow: hidden;
+                                            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+                                            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                                          }
+
+                                          /* Device Viewport Modes */
+                                          .device-frame-shell.desktop {
+                                            max-width: 1440px;
+                                            height: 800px;
+
+                                            .exec-frame-bezel.desktop {
+                                              max-width: 1480px;
+                                              height: 820px;
+                                            }
+
+                                            .device-frame-shell.tablet {
+                                              .exec-frame-bezel.tablet {
+                                                max-width: 768px;
+                                                height: 850px;
+                                              }
+
+                                              .device-frame-shell.mobile {
+                                                .exec-frame-bezel.mobile {
+                                                  max-width: 390px;
+                                                  height: 800px;
+                                                }
+
+                                                .device-frame-header {
+                                                  background: #11151F;
+                                                  padding: 0.6rem 1.2rem;
+
+                                                  .exec-frame-browser-bar {
+                                                    background: #0B0E15;
+                                                    padding: 0.65rem 1.4rem;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: 0.6rem;
+                                                    gap: 1rem;
+                                                    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                                                  }
+
+                                                  .traffic-light-dots {
+                                                    .exec-dots {
+                                                      display: flex;
+                                                      gap: 6px;
+                                                    }
+
+                                                    .t-dot {
+                                                      .exec-dot {
+                                                        width: 10px;
+                                                        height: 10px;
+                                                        border-radius: 50%;
+                                                      }
+
+                                                      .t-red {
+                                                        background: #FF5F56;
+                                                      }
+
+                                                      .t-yellow {
+                                                        background: #FFBD2E;
+                                                      }
+
+                                                      .t-green {
+                                                        background: #27C93F;
+                                                      }
+
+                                                      .dot-red {
+                                                        background: #FF5F56;
+                                                      }
+
+                                                      .dot-yellow {
+                                                        background: #FFBD2E;
+                                                      }
+
+                                                      .dot-green {
+                                                        background: #27C93F;
+                                                      }
+
+                                                      .frame-url-bar {
+                                                        .exec-url-field {
+                                                          flex-grow: 1;
+                                                          background: rgba(255, 255, 255, 0.05);
+                                                          background: rgba(255, 255, 255, 0.04);
+                                                          border-radius: 4px;
+                                                          padding: 0.25rem 0.8rem;
+                                                          padding: 0.3rem 1rem;
+                                                          font-family: var(--font-mono);
+                                                          font-size: 0.72rem;
+                                                          color: var(--hub-text-muted);
+                                                          color: var(--pitch-text-muted);
+                                                          text-align: center;
+                                                          font-family: monospace;
+                                                        }
+
+                                                        .frame-content-iframe {
+                                                          .exec-iframe {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            border: none;
+                                                            background: #fff;
+                                                            background: #000;
+                                                          }
+
+                                                          /* ==========================================================================
+   Design Comparison & Pitch Matrix
+   ========================================================================== */
+                                                          .comparison-matrix-section {
+                                                            background: var(--hub-surface);
+                                                            border-top: 1px solid var(--hub-border);
+                                                            padding: 5rem 3rem;
+
+                                                            /* Strategic Comparison Matrix */
+                                                            .exec-matrix-section {
+                                                              background: var(--pitch-surface);
+                                                              border-top: 1px solid var(--pitch-gold-wire);
+                                                              padding: 6rem 4rem;
+                                                            }
+
+                                                            .matrix-header {
+                                                              .exec-matrix-header {
+                                                                text-align: center;
+                                                                max-width: 720px;
+                                                                margin: 0 auto 3.5rem;
+                                                                max-width: 800px;
+                                                                margin: 0 auto 4rem;
+                                                              }
+
+                                                              .matrix-header h2 {
+                                                                font-family: var(--hub-serif);
+                                                                font-size: 2.2rem;
+
+                                                                .exec-matrix-header h2 {
+                                                                  font-family: var(--font-cinzel);
+                                                                  font-size: 2.4rem;
+                                                                  color: #fff;
+                                                                  margin-bottom: 0.8rem;
+                                                                }
+
+                                                                .matrix-header p {
+                                                                  color: var(--hub-text-muted);
+                                                                  font-size: 0.95rem;
+
+                                                                  .exec-matrix-header p {
+                                                                    color: var(--pitch-text-muted);
+                                                                    font-size: 1rem;
+                                                                  }
+
+                                                                  .matrix-grid {
+                                                                    max-width: 1200px;
+
+                                                                    .exec-matrix-grid {
+                                                                      max-width: 1400px;
+                                                                      margin: 0 auto;
+                                                                      display: grid;
+                                                                      grid-template-columns: 1fr 1fr;
+                                                                      gap: 2.5rem;
+                                                                      gap: 3.5rem;
+                                                                    }
+
+                                                                    .matrix-concept-card {
+                                                                      background: var(--hub-card);
+                                                                      border: 1px solid var(--hub-border);
+                                                                      border-radius: 12px;
+                                                                      padding: 2.5rem;
+
+                                                                      .exec-card-pitch {
+                                                                        background: var(--pitch-card);
+                                                                        border: 1px solid var(--pitch-border);
+                                                                        border-radius: 8px;
+                                                                        padding: 3rem;
+                                                                        transition: all 0.3s ease;
+                                                                      }
+
+                                                                      .matrix-concept-card:hover {
+                                                                        border-color: var(--hub-gold);
+
+                                                                        .exec-card-pitch:hover {
+                                                                          border-color: var(--pitch-gold);
+                                                                          transform: translateY(-4px);
+                                                                        }
+
+                                                                        .concept-card-title {
+                                                                          font-family: var(--hub-serif);
+
+                                                                          .exec-card-title {
+                                                                            font-family: var(--font-cinzel);
+                                                                            font-size: 1.8rem;
+                                                                            color: #fff;
+                                                                            margin-bottom: 0.4rem;
+                                                                          }
+
+                                                                          .concept-subtitle {
+                                                                            font-size: 0.78rem;
+                                                                            color: var(--hub-gold);
+
+                                                                            .exec-card-sub {
+                                                                              font-family: var(--font-mono);
+                                                                              font-size: 0.75rem;
+                                                                              letter-spacing: 0.2em;
+                                                                              text-transform: uppercase;
+                                                                              letter-spacing: 0.15em;
+                                                                              font-weight: 600;
+                                                                              color: var(--pitch-gold);
+                                                                              margin-bottom: 1.5rem;
+                                                                              display: block;
+                                                                            }
+
+                                                                            .matrix-table {
+                                                                              .exec-table {
+                                                                                width: 100%;
+                                                                                border-collapse: collapse;
+                                                                                margin: 1.5rem 0;
+                                                                                margin: 1.5rem 0 2rem;
+                                                                              }
+
+                                                                              .matrix-table td {
+                                                                                padding: 0.75rem 0;
+
+                                                                                .exec-table td {
+                                                                                  padding: 0.85rem 0;
+                                                                                  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                                                                                  font-size: 0.85rem;
+                                                                                  font-size: 0.88rem;
+                                                                                }
+
+                                                                                .matrix-table td:first-child {
+                                                                                  color: var(--hub-text-muted);
+
+                                                                                  .exec-table td:first-child {
+                                                                                    color: var(--pitch-text-muted);
+                                                                                    width: 35%;
+                                                                                    font-weight: 500;
+                                                                                    font-family: var(--font-mono);
+                                                                                    font-size: 0.75rem;
+                                                                                    text-transform: uppercase;
+                                                                                    letter-spacing: 0.1em;
+                                                                                  }
+
+                                                                                  .matrix-table td:last-child {
+                                                                                    .exec-table td:last-child {
+                                                                                      color: #fff;
+                                                                                      font-weight: 600;
+                                                                                      font-weight: 500;
+                                                                                    }
+
+                                                                                    .matrix-btn-row {
+                                                                                      .exec-footer {
+                                                                                        background: #040507;
+                                                                                        border-top: 1px solid var(--pitch-border);
+                                                                                        padding: 2.5rem 4rem;
+                                                                                        display: flex;
+                                                                                        gap: 1rem;
+                                                                                        margin-top: 1.5rem;
+                                                                                      }
+
+                                                                                      /* ==========================================================================
+   Presentation Footer
+   ========================================================================== */
+                                                                                      .showcase-footer {
+                                                                                        background: #080A0E;
+                                                                                        border-top: 1px solid var(--hub-border);
+                                                                                        padding: 2rem 3rem;
+                                                                                        display: flex;
+                                                                                        justify-content: space-between;
+                                                                                        align-items: center;
+                                                                                        font-size: 0.8rem;
+                                                                                        color: var(--hub-text-muted);
+                                                                                        font-family: var(--font-mono);
+                                                                                        font-size: 0.75rem;
+                                                                                        color: var(--pitch-text-muted);
+                                                                                      }

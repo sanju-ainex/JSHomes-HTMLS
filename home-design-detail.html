@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sovereign 62 — Luxury Home Design | JS Construction Sydney</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Home Design Detail Page Styles */
+    .design-hero {
+      padding: 8.5rem 0 4rem;
+      background: linear-gradient(180deg, #181716 0%, #22201D 100%);
+      color: #ffffff;
+      border-bottom: 1px solid rgba(184, 150, 90, 0.3);
+      position: relative;
+    }
+    .design-breadcrumb {
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a8a29e;
+    }
+    .design-breadcrumb a {
+      color: #d6cfc5;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .design-breadcrumb a:hover {
+      color: var(--accent-gold);
+    }
+    .design-hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 992px) {
+      .design-hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .design-hero-left {
+      max-width: 680px;
+    }
+    .design-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .design-hero-title {
+      font-family: var(--font-editorial);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+    .design-hero-lead {
+      font-size: 1.05rem;
+      color: #d6cfc5;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Highlighted Build Price Card */
+    .design-pricing-highlight-box {
+      background: linear-gradient(145deg, #242220 0%, #1A1918 100%);
+      border: 1px solid rgba(184, 150, 90, 0.45);
+      border-radius: 18px;
+      padding: 1.8rem 2.2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .design-pricing-highlight-box::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 150, 90, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pricing-deck-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-deck-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(184, 150, 90, 0.2);
+      border: 1px solid rgba(184, 150, 90, 0.45);
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .pricing-deck-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-from {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #d6cfc5;
+      font-weight: 500;
+      margin-right: 0.2rem;
+    }
+    .pricing-currency-sym {
+      font-family: var(--font-editorial);
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      line-height: 1;
+    }
+    .pricing-figure {
+      font-family: var(--font-editorial);
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      color: #ffffff;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .pricing-deck-currency {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #a8a29e;
+      margin-left: 0.4rem;
+    }
+    .pricing-deck-sub {
+      font-size: 0.85rem;
+      color: #a8a29e;
+      line-height: 1.5;
+      margin-bottom: 1.4rem;
+    }
+    .design-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Specs Section */
+    .design-specs-section {
+      padding: 1.8rem 0;
+      background: #FAF8F5;
+      border-bottom: 1px solid rgba(220, 214, 204, 0.7);
+    }
+    .design-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .design-specs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .design-specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .design-spec-box {
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .design-spec-label {
+      display: none !important;
+    }
+    .design-spec-val {
+      font-family: var(--font-body) !important;
+      font-size: 1.6rem;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* 3D Virtual Tour Section */
+    .virtual-tour-section {
+      padding: 5rem 0;
+      background: #181716;
+      color: #ffffff;
+    }
+    .tour-player-container {
+      background: #242220;
+      border: 1px solid rgba(184, 150, 90, 0.35);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .tour-viewport {
+      height: 520px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+    .tour-screen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+    .tour-overlay-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(184, 150, 90, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .tour-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .tour-room-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.2rem;
+      background: #1c1a18;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: auto;
+    }
+    .tour-room-btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: #d6cfc5;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .tour-room-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-color: var(--accent-gold);
+    }
+    .tour-room-btn.active {
+      background: var(--accent-gold);
+      color: #1a150e;
+      border-color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    /* Floor Plans Section */
+    .design-plans-section {
+      padding: 5rem 0;
+      background: #FAF8F5;
+      border-top: 1px solid rgba(220, 214, 204, 0.7);
+      border-bottom: 1px solid rgba(220, 214, 204, 0.7);
+    }
+    .design-plans-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2.5rem;
+      background: #ffffff;
+      border: 1px solid rgba(220, 214, 204, 0.8);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      .design-plans-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+
+    /* Inclusions Section */
+    .design-inclusions-section {
+      padding: 4.8rem 0;
+      background: #ffffff;
+    }
+    .inclusions-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      .inclusions-checklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .inclusion-checklist-card {
+      background: #FAF8F5;
+      border: 1px solid rgba(220, 214, 204, 0.7);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+    }
+    .inclusion-checklist-card h3 {
+      font-family: var(--font-editorial);
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+    .inclusion-checklist-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .inclusion-checklist-items li {
+      font-size: 0.88rem;
+      color: #44403c;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+    .inclusion-checklist-items li::before {
+      content: "✓";
+      color: var(--accent-gold-dark);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Top Master Navbar -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="nav-brand-box">
+        <a href="index.html" class="nav-brand-link">
+          <img src="logo.png" alt="JS Construction Sydney" class="site-brand-logo">
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="index.html#designs" class="nav-link active">Home Designs</a></li>
+        <li><a href="index.html#display-homes" class="nav-link">Display Homes</a></li>
+        <li><a href="completed-residences.html" class="nav-link">Completed Homes</a></li>
+        <li><a href="index.html#inclusions" class="nav-link">Inclusions</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-action-wrap">
+        <a href="#booking-modal" class="btn-pill-dark btn-open-booking">Book Consultation</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Design Hero Section -->
+  <section class="design-hero">
+    <div class="container">
+      <nav class="design-breadcrumb" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#designs">Home Designs</a>
+        <span class="breadcrumb-separator">/</span>
+        <span id="breadcrumb-design-title">The Sovereign 62</span>
+      </nav>
+
+      <div class="design-hero-grid">
+        <div class="design-hero-left">
+          <span class="design-hero-eyebrow" id="design-category">SIGNATURE DOUBLE STOREY &bull; COASTAL ARCHITECTURE</span>
+          <h1 class="design-hero-title" id="design-title">The Sovereign 62</h1>
+          <p class="design-hero-lead" id="design-desc">
+            A grand modern Australian family residence balancing soaring light-filled living spaces, dual master suites, private quiet retreats, and seamless outdoor entertainment zones designed for everyday family life.
+          </p>
+
+          <div class="design-cta-row">
+            <a href="#plans-section" class="btn-detail-primary">
+              <span>View Architectural Floor Plans</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#virtual-tour" class="btn-detail-outline">
+              <span>Take 3D Virtual Tour</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Highlighted Build Price Card -->
+        <div class="design-pricing-highlight-box">
+          <div class="pricing-deck-label">ESTIMATED BUILD PRICE</div>
+          <div class="pricing-deck-badge">✓ FIXED-PRICE CONTRACT</div>
+          <div class="pricing-deck-amount">
+            <span class="pricing-from">From</span>
+            <span class="pricing-currency-sym">$</span>
+            <span class="pricing-figure" id="design-price-val">2,180,000</span>
+            <span class="pricing-deck-currency">AUD</span>
+          </div>
+          <div class="pricing-deck-sub">Guaranteed fixed construction price with zero unexpected variations and complete turnkey inclusions.</div>
+          <a href="#consultation-form" class="btn-pill-white" style="width: 100%; justify-content: center;">
+            Request Site Siting &amp; Pricing Appraisal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Specifications Strip (Strictly integer numbers for bathrooms!) -->
+  <section class="design-specs-section">
+    <div class="container">
+      <div class="design-specs-grid">
+        <div class="design-spec-box" title="Bedrooms">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 19h20M2 17h20M4 17V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9M4 11h16M8 8v3M16 8v3"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-beds">5</div>
+        </div>
+        <div class="design-spec-box" title="Bathrooms">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1zM6 12V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1M5 20v2M19 20v2"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-baths">5</div>
+        </div>
+        <div class="design-spec-box" title="Car Spaces">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="8" rx="2"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M5 11l2-6h10l2 6"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-cars">4</div>
+        </div>
+        <div class="design-spec-box" title="Total Floor Area">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 9v12"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-area">720 m²</div>
+        </div>
+        <div class="design-spec-box" title="Min Lot Width">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 12h20M6 8l-4 4 4 4M18 8l4 4-4 4M2 5v14M22 5v14"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-width">20.0 m</div>
+        </div>
+        <div class="design-spec-box" title="Levels">
+          <div class="spec-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="design-spec-val" id="spec-storeys">Double Storey</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 3D Virtual Tour Walkthrough -->
+  <section class="virtual-tour-section" id="virtual-tour">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow centered" style="color: var(--accent-gold);">INTERACTIVE 3D WALKTHROUGH &bull; DIGITAL TWIN</span>
+        <h2 class="section-title" style="color: #ffffff;">Experience The <em class="designs-gold-shimmer">3D Virtual Tour</em></h2>
+        <p class="section-lead" style="color: #d6cfc5;">Walk through the residence room by room. Click between spaces below to inspect room flow, natural lighting, and luxury finishes.</p>
+      </div>
+
+      <div class="tour-player-container">
+        <div class="tour-viewport">
+          <img class="tour-screen-img" id="tour-screen-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85" alt="Virtual Tour Viewport">
+          <div class="tour-overlay-badge">
+            <span class="tour-pulse-dot"></span>
+            <span id="tour-room-title">Foyer &amp; Grand Atrium</span>
+          </div>
+        </div>
+
+        <div class="tour-room-nav-bar" id="tour-room-nav-bar">
+          <button class="tour-room-btn active" data-room="foyer">Foyer &amp; Atrium</button>
+          <button class="tour-room-btn" data-room="living">Great Living Pavilion</button>
+          <button class="tour-room-btn" data-room="kitchen">Chef Kitchen &amp; Scullery</button>
+          <button class="tour-room-btn" data-room="master">Master Wellness Suite</button>
+          <button class="tour-room-btn" data-room="alfresco">Alfresco Terrace &amp; Pool</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Floor Plans Section -->
+  <section class="design-plans-section" id="plans-section">
+    <div class="container">
+      <div class="plans-header-row">
+        <div>
+          <span class="section-eyebrow">ARCHITECTURAL BLUEPRINT &bull; ROOM DIMENSIONS</span>
+          <h2 class="section-title">Design <em class="designs-gold-shimmer">Floor Plans</em></h2>
+          <p class="section-lead" style="margin-bottom: 0;">Carefully planned zoning ensures parents enjoy privacy while children have dedicated study and lounge spaces.</p>
+        </div>
+
+              <div class="plans-level-tabs">
+          <button class="plan-tab-btn active" data-plan="ground" id="tab-btn-ground">Ground Floor Layout</button>
+          <button class="plan-tab-btn" data-plan="first" id="tab-btn-first">First Floor Suites</button>
+        </div>
+      </div>
+
+      <div class="design-plans-grid">
+        <!-- Authentic CAD SVG Presentation Floor Plans -->
+        <div class="plan-svg-frame" id="plan-svg-container">
+          <div id="ground-plan-view" class="cad-plan-level active">
+<svg viewBox="0 0 920 620" fill="none" xmlns="http://www.w3.org/2000/svg" class="authentic-cad-plan">
+  <defs>
+    <pattern id="drafting-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(28,25,23,0.035)" stroke-width="1"/>
+    </pattern>
+    <pattern id="oak-planks" width="60" height="12" patternUnits="userSpaceOnUse">
+      <rect width="60" height="12" fill="#F9F6F0"/>
+      <line x1="0" y1="12" x2="60" y2="12" stroke="#E5DDD0" stroke-width="1"/>
+      <line x1="30" y1="0" x2="30" y2="12" stroke="#E5DDD0" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="bluestone" width="30" height="20" patternUnits="userSpaceOnUse">
+      <rect width="30" height="20" fill="#F0EDE6"/>
+      <rect x="0" y="0" width="30" height="20" stroke="#D8D2C6" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="stone-tile" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#FDFDFB"/>
+      <rect x="0" y="0" width="24" height="24" stroke="#E2DDD4" stroke-width="0.8" fill="none"/>
+    </pattern>
+    <linearGradient id="pool-water" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FE2E8" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#58C8D4" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#38B2C4" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="620" fill="#FDFCFA"/>
+  <rect width="920" height="620" fill="url(#drafting-grid)"/>
+  <rect x="20" y="20" width="880" height="580" stroke="#D5CEC2" stroke-width="1.5" fill="none"/>
+  <rect x="23" y="23" width="874" height="574" stroke="#EAE5DC" stroke-width="0.7" fill="none"/>
+
+  <rect x="45" y="45" width="830" height="530" fill="none" stroke="#1C1917" stroke-dasharray="6 4" stroke-width="1.2"/>
+  <text x="55" y="60" font-family="monospace" font-size="9" fill="#8C827A" letter-spacing="1">SITE BOUNDARY • TITLE REGISTER LOT 418</text>
+
+  <g id="pool-feature">
+    <rect x="70" y="430" width="260" height="125" rx="4" fill="url(#pool-water)" stroke="#1C1917" stroke-width="2.5"/>
+    <rect x="70" y="430" width="40" height="125" fill="rgba(255,255,255,0.3)" stroke="rgba(28,25,23,0.3)" stroke-width="1"/>
+    <line x1="85" y1="430" x2="85" y2="555" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <line x1="100" y1="430" x2="100" y2="555" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <line x1="65" y1="418" x2="335" y2="418" stroke="#3B82F6" stroke-dasharray="8 3" stroke-width="2"/>
+    <text x="140" y="495" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" letter-spacing="1">HEATED LAP POOL 8.5m × 4.0m</text>
+    <text x="165" y="515" font-family="monospace" font-size="9" fill="#E0F7FA">DEPTH 1.2m – 1.8m • SPA JETS</text>
+  </g>
+
+  <g id="alfresco">
+    <rect x="70" y="270" width="260" height="140" fill="url(#bluestone)" stroke="#1C1917" stroke-width="3"/>
+    <line x1="70" y1="290" x2="330" y2="290" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="70" y1="310" x2="330" y2="310" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="70" y1="330" x2="330" y2="330" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="70" y1="350" x2="330" y2="350" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="70" y1="370" x2="330" y2="370" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="70" y1="390" x2="330" y2="390" stroke="#C8C0B2" stroke-width="1" stroke-dasharray="4 2"/>
+    <rect x="72" y="272" width="90" height="28" fill="#D5CEC2" stroke="#1C1917" stroke-width="1.8"/>
+    <rect x="82" y="275" width="35" height="20" fill="#8C827A" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="135" cy="285" r="8" fill="none" stroke="#1C1917" stroke-width="1"/>
+    <text x="80" y="325" font-family="sans-serif" font-size="12" font-weight="700" fill="#1C1917">COVERED ALFRESCO</text>
+    <text x="80" y="342" font-family="monospace" font-size="10" fill="#78716C">8.2m × 4.8m • BEACON CEILING FAN</text>
+    <rect x="170" y="325" width="80" height="45" rx="2" fill="#E5DDD0" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="180" y="316" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="205" y="316" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="230" y="316" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="180" y="372" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="205" y="372" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="230" y="372" width="16" height="7" rx="1" fill="#8C827A"/>
+    <rect x="161" y="338" width="7" height="18" rx="1" fill="#8C827A"/>
+    <rect x="252" y="338" width="7" height="18" rx="1" fill="#8C827A"/>
+  </g>
+
+  <g id="living-room">
+    <rect x="70" y="80" width="340" height="190" fill="url(#oak-planks)" stroke="#1C1917" stroke-width="4"/>
+    <line x1="70" y1="270" x2="260" y2="270" stroke="#B59458" stroke-width="6"/>
+    <text x="100" y="264" font-family="monospace" font-size="8" fill="#B59458" font-weight="bold">FLUSH-SILL TRIPLE CAVITY SLIDERS</text>
+    <path d="M 100 110 L 220 110 L 220 190 L 190 190 L 190 135 L 100 135 Z" fill="#E8E3DA" stroke="#1C1917" stroke-width="1.8"/>
+    <rect x="120" y="148" width="55" height="35" rx="2" fill="#FFFFFF" stroke="#B59458" stroke-width="1.4"/>
+    <text x="128" y="169" font-family="monospace" font-size="8" fill="#8C827A">MARBLE</text>
+    <rect x="72" y="130" width="12" height="70" fill="#22201D" stroke="#1C1917" stroke-width="1.5"/>
+    <line x1="76" y1="145" x2="76" y2="185" stroke="#EAB308" stroke-width="2"/>
+    <rect x="245" y="120" width="95" height="50" rx="3" fill="#E0D7C8" stroke="#1C1917" stroke-width="1.8"/>
+    <circle cx="260" cy="112" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="280" cy="112" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="300" cy="112" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="320" cy="112" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="260" cy="178" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="280" cy="178" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="300" cy="178" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="320" cy="178" r="6" fill="#A8A29E" stroke="#1C1917" stroke-width="1"/>
+    <text x="95" y="102" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1C1917" letter-spacing="0.5">GREAT LIVING &amp; DINING</text>
+    <text x="245" y="102" font-family="monospace" font-size="10" fill="#78716C">11.4m × 6.8m (77 m²)</text>
+    <text x="100" y="225" font-family="monospace" font-size="9" fill="#8C827A">3.6M COFFERED CEILINGS • FRENCH OAK FLOORS</text>
+  </g>
+
+  <g id="kitchen-suite">
+    <rect x="410" y="80" width="220" height="190" fill="url(#stone-tile)" stroke="#1C1917" stroke-width="4"/>
+    <rect x="435" y="135" width="130" height="48" rx="2" fill="#FFFFFF" stroke="#B59458" stroke-width="2"/>
+    <rect x="470" y="145" width="30" height="16" rx="2" fill="#F0EDE6" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="485" cy="143" r="3" fill="#B59458"/>
+    <circle cx="450" cy="193" r="6" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="475" cy="193" r="6" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="500" cy="193" r="6" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <circle cx="525" cy="193" r="6" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <rect x="410" y="80" width="160" height="28" fill="#EDE8DF" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="450" y="82" width="45" height="22" fill="#1C1917"/>
+    <circle cx="460" cy="90" r="3" fill="#EAB308"/>
+    <circle cx="472" cy="90" r="3" fill="#EAB308"/>
+    <circle cx="484" cy="90" r="3" fill="#EAB308"/>
+    <circle cx="460" cy="98" r="3" fill="#EAB308"/>
+    <circle cx="472" cy="98" r="3" fill="#EAB308"/>
+    <circle cx="484" cy="98" r="3" fill="#EAB308"/>
+    <line x1="575" y1="80" x2="575" y2="190" stroke="#1C1917" stroke-width="3"/>
+    <path d="M 575 160 A 24 24 0 0 1 599 184" fill="none" stroke="#8C827A" stroke-width="1" stroke-dasharray="2 2"/>
+    <line x1="575" y1="160" x2="575" y2="184" stroke="#1C1917" stroke-width="1.8"/>
+    <rect x="578" y="82" width="50" height="25" fill="#D5CEC2" stroke="#1C1917" stroke-width="1"/>
+    <text x="584" y="98" font-family="monospace" font-size="7" fill="#1C1917">SUB-ZERO</text>
+    <rect x="578" y="110" width="50" height="22" fill="#EAE5DC" stroke="#1C1917" stroke-width="1"/>
+    <text x="584" y="124" font-family="monospace" font-size="7" fill="#57534E">SCULLERY</text>
+    <text x="425" y="118" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1C1917">CHEF KITCHEN &amp; SCULLERY</text>
+    <text x="425" y="225" font-family="monospace" font-size="9" fill="#78716C">80mm MITRED CALACATTA • ZIP HYDROTAP</text>
+  </g>
+
+  <g id="cinema">
+    <rect x="330" y="270" width="180" height="140" fill="#22201D" stroke="#1C1917" stroke-width="4"/>
+    <rect x="334" y="320" width="6" height="60" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1"/>
+    <text x="345" y="354" font-family="monospace" font-size="8" fill="#38BDF8" font-weight="bold">120" 4K LASER SCREEN</text>
+    <rect x="410" y="295" width="32" height="28" rx="4" fill="#38332E" stroke="#B59458" stroke-width="1.2"/>
+    <rect x="410" y="335" width="32" height="28" rx="4" fill="#38332E" stroke="#B59458" stroke-width="1.2"/>
+    <rect x="455" y="295" width="32" height="28" rx="4" fill="#38332E" stroke="#B59458" stroke-width="1.2"/>
+    <rect x="455" y="335" width="32" height="28" rx="4" fill="#38332E" stroke="#B59458" stroke-width="1.2"/>
+    <line x1="510" y1="380" x2="510" y2="410" stroke="#1C1917" stroke-width="2"/>
+    <path d="M 480 410 A 30 30 0 0 1 510 380" fill="none" stroke="#A8A29E" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="345" y="290" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">PRIVATE HOME CINEMA</text>
+    <text x="345" y="305" font-family="monospace" font-size="9" fill="#DFCA9B">5.8m × 4.4m (25 m²)</text>
+    <text x="345" y="398" font-family="monospace" font-size="8" fill="#A8A29E">RW55 ACOUSTIC INSULATION</text>
+  </g>
+
+  <g id="foyer-entry">
+    <rect x="510" y="270" width="120" height="140" fill="url(#oak-planks)" stroke="#1C1917" stroke-width="3"/>
+    <line x1="510" y1="410" x2="570" y2="410" stroke="#B59458" stroke-width="4"/>
+    <path d="M 510 410 A 30 30 0 0 1 540 440" fill="none" stroke="#B59458" stroke-width="1" stroke-dasharray="2 2"/>
+    <rect x="520" y="275" width="40" height="75" fill="#EDE7DC" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="285" x2="560" y2="285" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="295" x2="560" y2="295" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="305" x2="560" y2="305" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="315" x2="560" y2="315" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="325" x2="560" y2="325" stroke="#1C1917" stroke-width="1"/>
+    <line x1="520" y1="335" x2="560" y2="335" stroke="#1C1917" stroke-width="1"/>
+    <line x1="540" y1="345" x2="540" y2="280" stroke="#B59458" stroke-width="1.5"/>
+    <polyline points="536,286 540,278 544,286" stroke="#B59458" stroke-width="1.5" fill="none"/>
+    <text x="545" y="315" font-family="monospace" font-size="8" font-weight="bold" fill="#B59458">UP</text>
+    <text x="520" y="370" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1C1917">GRAND FOYER</text>
+    <text x="520" y="385" font-family="monospace" font-size="8" fill="#78716C">DOUBLE-HEIGHT VOID</text>
+    <text x="515" y="425" font-family="monospace" font-size="9" font-weight="bold" fill="#B59458">MAIN ENTRY ↓</text>
+  </g>
+
+  <g id="garage">
+    <rect x="630" y="80" width="220" height="330" fill="#F4F1EA" stroke="#1C1917" stroke-width="4"/>
+    <rect x="655" y="110" width="75" height="145" rx="16" fill="none" stroke="#78716C" stroke-width="1.8"/>
+    <rect x="662" y="135" width="61" height="80" rx="6" fill="#E5DDD0" stroke="#78716C" stroke-width="1"/>
+    <circle cx="665" cy="130" r="5" fill="#1C1917"/>
+    <circle cx="720" cy="130" r="5" fill="#1C1917"/>
+    <circle cx="665" cy="230" r="5" fill="#1C1917"/>
+    <circle cx="720" cy="230" r="5" fill="#1C1917"/>
+    <text x="670" y="175" font-family="monospace" font-size="8" fill="#78716C" font-weight="bold">BAY 01</text>
+    <rect x="750" y="110" width="75" height="145" rx="16" fill="none" stroke="#78716C" stroke-width="1.8"/>
+    <rect x="757" y="135" width="61" height="80" rx="6" fill="#E5DDD0" stroke="#78716C" stroke-width="1"/>
+    <circle cx="760" cy="130" r="5" fill="#1C1917"/>
+    <circle cx="815" cy="130" r="5" fill="#1C1917"/>
+    <circle cx="760" cy="230" r="5" fill="#1C1917"/>
+    <circle cx="815" cy="230" r="5" fill="#1C1917"/>
+    <text x="765" y="175" font-family="monospace" font-size="8" fill="#78716C" font-weight="bold">BAY 02</text>
+    <rect x="640" y="285" width="195" height="35" fill="#E0D7C8" stroke="#1C1917" stroke-width="1.2"/>
+    <text x="680" y="306" font-family="monospace" font-size="9" fill="#57534E">WORKSHOP BENCH • EV FAST CHARGER</text>
+    <line x1="645" y1="80" x2="835" y2="80" stroke="#1C1917" stroke-dasharray="10 4" stroke-width="4"/>
+    <text x="690" y="72" font-family="monospace" font-size="9" fill="#78716C">SECTIONAL MOTORISED DOORS ↑</text>
+    <text x="650" y="350" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1C1917">4-CAR GARAGE &amp; WORKSHOP</text>
+    <text x="650" y="368" font-family="monospace" font-size="10" fill="#78716C">9.6m × 6.8m (65 m²)</text>
+    <text x="650" y="385" font-family="monospace" font-size="9" fill="#8C827A">EPOXY RESIN FLOOR • SECURE ENTRY</text>
+  </g>
+
+  <g id="title-block" transform="translate(560, 480)">
+    <rect width="310" height="95" fill="#FFFFFF" stroke="#1C1917" stroke-width="2"/>
+    <line x1="0" y1="28" x2="310" y2="28" stroke="#1C1917" stroke-width="1"/>
+    <line x1="0" y1="62" x2="310" y2="62" stroke="#1C1917" stroke-width="1"/>
+    <line x1="190" y1="28" x2="190" y2="95" stroke="#1C1917" stroke-width="1"/>
+    <text x="12" y="19" font-family="serif" font-size="13" font-weight="bold" fill="#1C1917" letter-spacing="1.5">AURA ARCHITECTURAL SERIES</text>
+    <text x="12" y="44" font-family="sans-serif" font-size="11" font-weight="bold" fill="#B59458">THE SOVEREIGN 62 • LEVEL 00</text>
+    <text x="12" y="56" font-family="monospace" font-size="8" fill="#78716C">GROUND LIVING • ALFRESCO • CINEMA</text>
+    <text x="12" y="78" font-family="monospace" font-size="8" fill="#1C1917">SCALE: 1:100 @ A3</text>
+    <text x="12" y="89" font-family="monospace" font-size="8" fill="#78716C">REV: C • MARCH 2026</text>
+    <text x="200" y="46" font-family="monospace" font-size="9" font-weight="bold" fill="#1C1917">DWG NO. AR-01</text>
+    <text x="200" y="76" font-family="monospace" font-size="8" fill="#57534E">MBA LIC #409218</text>
+    <text x="200" y="88" font-family="monospace" font-size="7" fill="#8C827A">PASSED AUDIT ✓</text>
+  </g>
+
+  <g id="north-arrow" transform="translate(850, 440)">
+    <circle cx="0" cy="0" r="18" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.5"/>
+    <polygon points="0,-14 5,4 0,0 -5,4" fill="#1C1917"/>
+    <polygon points="0,-14 5,4 0,0" fill="#B59458"/>
+    <text x="-3" y="-16" font-family="monospace" font-size="9" font-weight="bold" fill="#1C1917">N</text>
+  </g>
+</svg>
+          </div>
+          <div id="first-plan-view" class="cad-plan-level" style="display: none;">
+<svg viewBox="0 0 920 620" fill="none" xmlns="http://www.w3.org/2000/svg" class="authentic-cad-plan">
+  <defs>
+    <pattern id="drafting-grid-1" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(28,25,23,0.035)" stroke-width="1"/>
+    </pattern>
+    <pattern id="wool-carpet" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#FAF7F2"/>
+      <circle cx="8" cy="8" r="1" fill="#D5CEC2"/>
+    </pattern>
+    <pattern id="ensuite-tile" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#FBFBF8"/>
+      <rect x="0" y="0" width="20" height="20" stroke="#DFD9CE" stroke-width="0.8" fill="none"/>
+    </pattern>
+    <pattern id="decking" width="40" height="10" patternUnits="userSpaceOnUse">
+      <rect width="40" height="10" fill="#E8E0D2"/>
+      <line x1="0" y1="10" x2="40" y2="10" stroke="#C8BEAE" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="920" height="620" fill="#FDFCFA"/>
+  <rect width="920" height="620" fill="url(#drafting-grid-1)"/>
+  <rect x="20" y="20" width="880" height="580" stroke="#D5CEC2" stroke-width="1.5" fill="none"/>
+  <rect x="23" y="23" width="874" height="574" stroke="#EAE5DC" stroke-width="0.7" fill="none"/>
+
+  <text x="55" y="60" font-family="monospace" font-size="9" fill="#8C827A" letter-spacing="1">LEVEL 01 UPPER SUITE LEVEL • CEILING HEIGHT 3,000MM</text>
+
+  <g id="master-suite">
+    <rect x="70" y="80" width="340" height="220" fill="url(#wool-carpet)" stroke="#1C1917" stroke-width="4"/>
+    <rect x="70" y="80" width="340" height="45" fill="url(#decking)" stroke="#1C1917" stroke-width="2"/>
+    <line x1="70" y1="80" x2="410" y2="80" stroke="#3B82F6" stroke-dasharray="6 3" stroke-width="2.5"/>
+    <text x="80" y="105" font-family="monospace" font-size="8" fill="#57534E">PRIVATE SUNRISE BALCONY • FRAMELESS GLASS BALUSTRADE</text>
+    <rect x="160" y="160" width="110" height="105" rx="4" fill="#FFFFFF" stroke="#1C1917" stroke-width="2"/>
+    <rect x="170" y="165" width="40" height="22" rx="3" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <rect x="220" y="165" width="40" height="22" rx="3" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <line x1="160" y1="195" x2="270" y2="195" stroke="#E5DDD0" stroke-width="1.5"/>
+    <rect x="125" y="165" width="28" height="25" rx="2" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <rect x="277" y="165" width="28" height="25" rx="2" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <text x="85" y="145" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1C1917">MASTER PENTHOUSE SUITE</text>
+    <text x="85" y="160" font-family="monospace" font-size="10" fill="#78716C">8.4m × 5.6m (47 m²)</text>
+    <text x="85" y="285" font-family="monospace" font-size="9" fill="#B59458">OCEAN HORIZON VISTAS • ACOUSTIC CEILINGS</text>
+  </g>
+
+  <g id="master-wir">
+    <rect x="70" y="300" width="180" height="170" fill="#F4F0E8" stroke="#1C1917" stroke-width="3"/>
+    <rect x="72" y="302" width="30" height="166" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <rect x="218" y="302" width="30" height="166" fill="#E5DDD0" stroke="#1C1917" stroke-width="1"/>
+    <rect x="125" y="350" width="70" height="45" rx="3" fill="#FFFFFF" stroke="#B59458" stroke-width="1.8"/>
+    <text x="136" y="375" font-family="monospace" font-size="8" fill="#8C827A">ISLAND</text>
+    <text x="110" y="325" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1C1917">WALK-IN ROBE</text>
+    <text x="110" y="340" font-family="monospace" font-size="9" fill="#78716C">4.6m × 3.8m</text>
+    <text x="108" y="435" font-family="monospace" font-size="8" fill="#8C827A">INTEGRATED LED</text>
+  </g>
+
+  <g id="master-ensuite">
+    <rect x="250" y="300" width="160" height="170" fill="url(#ensuite-tile)" stroke="#1C1917" stroke-width="3"/>
+    <ellipse cx="325" cy="345" rx="40" ry="22" fill="#FFFFFF" stroke="#1C1917" stroke-width="2"/>
+    <ellipse cx="325" cy="345" rx="33" ry="16" fill="#F4FBFB" stroke="#B59458" stroke-width="1"/>
+    <circle cx="350" cy="345" r="2.5" fill="#B59458"/>
+    <rect x="252" y="410" width="75" height="58" fill="#EAF5F8" stroke="#1C1917" stroke-width="1.2"/>
+    <circle cx="275" cy="438" r="6" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="305" cy="438" r="6" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="265" y="460" font-family="monospace" font-size="7" fill="#0284C7">DUAL RAIN</text>
+    <rect x="340" y="395" width="68" height="72" fill="#EDE7DC" stroke="#1C1917" stroke-width="1.2"/>
+    <ellipse cx="365" cy="415" rx="10" ry="8" fill="#FFFFFF" stroke="#1C1917" stroke-width="1"/>
+    <ellipse cx="365" cy="445" rx="10" ry="8" fill="#FFFFFF" stroke="#1C1917" stroke-width="1"/>
+    <text x="265" y="318" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1C1917">SPA ENSUITE</text>
+    <text x="265" y="385" font-family="monospace" font-size="8" fill="#8C827A">VOLCANIC LIMESTONE</text>
+  </g>
+
+  <g id="kids-retreat">
+    <rect x="410" y="80" width="210" height="200" fill="url(#wool-carpet)" stroke="#1C1917" stroke-width="4"/>
+    <rect x="430" y="110" width="120" height="35" rx="4" fill="#E5DDD0" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="455" y="155" width="55" height="30" rx="2" fill="#EDE7DC" stroke="#1C1917" stroke-width="1"/>
+    <text x="430" y="100" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1C1917">KIDS RETREAT &amp; STUDY</text>
+    <text x="430" y="225" font-family="monospace" font-size="9" fill="#78716C">6.2m × 4.8m (30 m²)</text>
+    <text x="430" y="245" font-family="monospace" font-size="8" fill="#8C827A">BUILT-IN OAK STUDY DESK</text>
+  </g>
+
+  <g id="stair-void">
+    <rect x="410" y="280" width="210" height="190" fill="#F9F6F0" stroke="#1C1917" stroke-width="3" stroke-dasharray="6 4"/>
+    <line x1="410" y1="280" x2="620" y2="470" stroke="rgba(28,25,23,0.15)" stroke-width="1"/>
+    <line x1="410" y1="470" x2="620" y2="280" stroke="rgba(28,25,23,0.15)" stroke-width="1"/>
+    <line x1="415" y1="285" x2="415" y2="465" stroke="#B59458" stroke-width="3"/>
+    <rect x="430" y="320" width="40" height="75" fill="#EDE7DC" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="330" x2="470" y2="330" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="340" x2="470" y2="340" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="350" x2="470" y2="350" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="360" x2="470" y2="360" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="370" x2="470" y2="370" stroke="#1C1917" stroke-width="1"/>
+    <line x1="430" y1="380" x2="470" y2="380" stroke="#1C1917" stroke-width="1"/>
+    <line x1="450" y1="330" x2="450" y2="385" stroke="#B59458" stroke-width="1.5"/>
+    <polyline points="446,378 450,386 454,378" stroke="#B59458" stroke-width="1.5" fill="none"/>
+    <text x="455" y="358" font-family="monospace" font-size="8" font-weight="bold" fill="#B59458">DN</text>
+    <text x="485" y="370" font-family="sans-serif" font-size="12" font-weight="bold" fill="#B59458">VOID OVER FOYER</text>
+    <text x="485" y="388" font-family="monospace" font-size="8" fill="#78716C">DOUBLE HEIGHT ATRIUM</text>
+  </g>
+
+  <g id="bed-suites">
+    <rect x="620" y="80" width="230" height="130" fill="url(#wool-carpet)" stroke="#1C1917" stroke-width="3.5"/>
+    <rect x="640" y="110" width="80" height="75" rx="3" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="648" y="115" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <rect x="682" y="115" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <text x="730" y="125" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1C1917">BEDROOM 02</text>
+    <text x="730" y="140" font-family="monospace" font-size="9" fill="#78716C">4.2m × 3.8m • BIR</text>
+    <text x="730" y="158" font-family="monospace" font-size="8" fill="#B59458">PRIVATE ENSUITE</text>
+
+    <rect x="620" y="210" width="230" height="130" fill="url(#wool-carpet)" stroke="#1C1917" stroke-width="3.5"/>
+    <rect x="640" y="240" width="80" height="75" rx="3" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="648" y="245" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <rect x="682" y="245" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <text x="730" y="255" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1C1917">BEDROOM 03</text>
+    <text x="730" y="270" font-family="monospace" font-size="9" fill="#78716C">4.2m × 3.8m • BIR</text>
+    <text x="730" y="288" font-family="monospace" font-size="8" fill="#B59458">SUNSET BALCONY</text>
+
+    <rect x="620" y="340" width="230" height="130" fill="url(#wool-carpet)" stroke="#1C1917" stroke-width="3.5"/>
+    <rect x="640" y="370" width="80" height="75" rx="3" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.5"/>
+    <rect x="648" y="375" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <rect x="682" y="375" width="30" height="18" rx="2" fill="#EDE7DC" stroke="#B59458" stroke-width="1"/>
+    <text x="730" y="385" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1C1917">BEDROOM 04</text>
+    <text x="730" y="400" font-family="monospace" font-size="9" fill="#78716C">4.2m × 3.8m • WIR</text>
+    <text x="730" y="418" font-family="monospace" font-size="8" fill="#8C827A">GUEST POWDER</text>
+  </g>
+
+  <g id="title-block-1" transform="translate(560, 480)">
+    <rect width="310" height="95" fill="#FFFFFF" stroke="#1C1917" stroke-width="2"/>
+    <line x1="0" y1="28" x2="310" y2="28" stroke="#1C1917" stroke-width="1"/>
+    <line x1="0" y1="62" x2="310" y2="62" stroke="#1C1917" stroke-width="1"/>
+    <line x1="190" y1="28" x2="190" y2="95" stroke="#1C1917" stroke-width="1"/>
+    <text x="12" y="19" font-family="serif" font-size="13" font-weight="bold" fill="#1C1917" letter-spacing="1.5">AURA ARCHITECTURAL SERIES</text>
+    <text x="12" y="44" font-family="sans-serif" font-size="11" font-weight="bold" fill="#B59458">THE SOVEREIGN 62 • LEVEL 01</text>
+    <text x="12" y="56" font-family="monospace" font-size="8" fill="#78716C">MASTER SUITE • RETREAT • BEDS 2, 3, 4</text>
+    <text x="12" y="78" font-family="monospace" font-size="8" fill="#1C1917">SCALE: 1:100 @ A3</text>
+    <text x="12" y="89" font-family="monospace" font-size="8" fill="#78716C">REV: C • MARCH 2026</text>
+    <text x="200" y="46" font-family="monospace" font-size="9" font-weight="bold" fill="#1C1917">DWG NO. AR-02</text>
+    <text x="200" y="76" font-family="monospace" font-size="8" fill="#57534E">MBA LIC #409218</text>
+    <text x="200" y="88" font-family="monospace" font-size="7" fill="#8C827A">PASSED AUDIT ✓</text>
+  </g>
+
+  <g id="north-arrow-1" transform="translate(850, 440)">
+    <circle cx="0" cy="0" r="18" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.5"/>
+    <polygon points="0,-14 5,4 0,0 -5,4" fill="#1C1917"/>
+    <polygon points="0,-14 5,4 0,0" fill="#B59458"/>
+    <text x="-3" y="-16" font-family="monospace" font-size="9" font-weight="bold" fill="#1C1917">N</text>
+  </g>
+</svg>
+          </div>
+        </div>
+
+        <div class="plan-info-side">
+          <h3 class="plan-info-title" id="design-plan-title">Ground Floor Living &amp; Alfresco</h3>
+          <p class="plan-info-lead" id="design-plan-desc">
+            Designed for effortless family living. Wide glass sliding doors open to the garden and pool, while the separate home cinema allows family members to relax without noise travelling to bedroom areas.
+          </p>
+
+          <ul class="plan-rooms-list" id="plan-rooms-container">
+            <li><span class="room-name">Great Living &amp; Dining Room</span><span class="room-dim">11.4m × 6.8m (77 m²)</span></li>
+            <li><span class="room-name">Chef Kitchen &amp; Butler's Pantry</span><span class="room-dim">6.0m × 4.5m (27 m²)</span></li>
+            <li><span class="room-name">Private Home Cinema</span><span class="room-dim">5.8m × 4.4m (25 m²)</span></li>
+            <li><span class="room-name">Covered Alfresco &amp; Outdoor Kitchen</span><span class="room-dim">8.2m × 4.8m (39 m²)</span></li>
+            <li><span class="room-name">4-Car Garage &amp; Workshop Bay</span><span class="room-dim">9.6m × 6.8m (65 m²)</span></li>
+            <li><span class="room-name">Grand Foyer &amp; Gallery Atrium</span><span class="room-dim">4.8m × 3.6m (17 m²)</span></li>
+          </ul>
+
+          <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(220, 214, 204, 0.6); display: flex; flex-direction: column; gap: 0.8rem;">
+            <a href="#booking-modal" class="btn-pill-dark btn-open-booking" style="width: 100%; text-align: center; justify-content: center;">
+              Book Private Consultation on This Design
+            </a>
+            <a href="contact.html" class="btn-pill-outline" style="width: 100%; text-align: center; justify-content: center;">
+              Download Full Floorplan &amp; Brochure (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standard Luxury Inclusions Section -->
+  <section class="design-inclusions-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow centered">STANDARD INCLUSIONS &bull; TURNKEY CRAFTSMANSHIP</span>
+        <h2 class="section-title">Included in Your <em class="designs-gold-shimmer">Fixed Price</em></h2>
+        <p class="section-lead">Every item listed below is included in your contract price without hidden upgrade fees.</p>
+      </div>
+
+      <div class="inclusions-checklist-grid">
+        <div class="inclusion-checklist-card">
+          <h3>Kitchen &amp; Scullery</h3>
+          <ul class="inclusion-checklist-items">
+            <li>Sub-Zero integrated refrigerator &amp; freezer</li>
+            <li>Wolf 6-burner dual-fuel cooktop and oven</li>
+            <li>80mm natural stone or engineered marble island</li>
+            <li>Separate butler's scullery with second dishwasher</li>
+            <li>Zip HydroTap boiling, chilled, and sparkling water</li>
+          </ul>
+        </div>
+
+        <div class="inclusion-checklist-card">
+          <h3>Bathrooms &amp; Ensuites</h3>
+          <ul class="inclusion-checklist-items">
+            <li>Freestanding volcanic limestone master bath</li>
+            <li>Underfloor heating throughout all bathrooms</li>
+            <li>Frameless walk-in dual rain showers</li>
+            <li>Custom fluted oak floating vanities</li>
+            <li>Heated towel ladders and anti-fog LED mirrors</li>
+          </ul>
+        </div>
+
+        <div class="inclusion-checklist-card">
+          <h3>Windows &amp; Smart Tech</h3>
+          <ul class="inclusion-checklist-items">
+            <li>Thermally broken double glazing on all windows</li>
+            <li>KNX whole-home scene lighting &amp; climate control</li>
+            <li>Fingerprint biometric entry locks</li>
+            <li>Pre-wired 3-phase EV fast charger in garage</li>
+            <li>Sound-insulating wall batts in all internal walls</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Feasibility & Consultation Form Section -->
+  <section class="container" id="consultation-form" style="margin-bottom: 5.5rem;">
+    <div style="background: #FAF8F5; border: 1px solid rgba(220, 214, 204, 0.85); border-radius: 24px; padding: 3.5rem 4rem; box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);">
+      <div class="section-header-center" style="margin-bottom: 2.5rem;">
+        <span class="section-eyebrow centered">COMPLIMENTARY ARCHITECTURAL APPRAISAL</span>
+        <h2 class="section-title">Enquire on This <em class="designs-gold-shimmer">Design</em></h2>
+        <p class="section-lead" style="max-width: 680px; margin: 0 auto;">
+          Our senior architectural siting team will review your land dimensions, orientation, and council planning overlays to confirm how this design optimizes your block.
+        </p>
+      </div>
+
+      <div id="design-enquiry-card">
+        <form id="design-enquiry-form" style="max-width: 760px; margin: 0 auto;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem;">
+            <div>
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="booking-input" required placeholder="e.g. David &amp; Victoria Vance">
+            </div>
+            <div>
+              <label class="form-label">Australian Mobile *</label>
+              <input type="tel" class="booking-input" required placeholder="0400 000 000">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem;">
+            <div>
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="booking-input" required placeholder="name@domain.com.au">
+            </div>
+            <div>
+              <label class="form-label">Homesite Suburb / Postcode</label>
+              <input type="text" class="booking-input" placeholder="e.g. Vaucluse NSW 2030">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem;">
+            <div>
+              <label class="form-label">Current Land Status</label>
+              <select class="booking-select">
+                <option value="own-vacant">I own vacant land ready to build</option>
+                <option value="own-knockdown">I own an existing home for knockdown rebuild</option>
+                <option value="under-contract">Land is currently under contract</option>
+                <option value="looking">Actively searching for a homesite</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label">Desired Build Timeline</label>
+              <select class="booking-select">
+                <option value="immediate">Immediate (Ready to start approvals)</option>
+                <option value="6-12m">6 to 12 months</option>
+                <option value="12-24m">12 to 24 months</option>
+                <option value="exploring">Exploring architectural possibilities</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.8rem;">
+            <label class="form-label">Custom Requirements or Site Notes (Optional)</label>
+            <textarea rows="3" class="booking-textarea" placeholder="Tell us about your block slope, views, pool preference, or desired modifications to this floor plan..."></textarea>
+          </div>
+
+          <div style="text-align: center;">
+            <button type="submit" class="btn-pill-dark" style="padding: 1.1rem 3.2rem; font-size: 0.92rem; width: 100%; max-width: 420px; justify-content: center;">
+              Request Site Feasibility Assessment &rarr;
+            </button>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.72rem; color: #78716C; flex-wrap: wrap;">
+            <span>✓ Fixed-Price Contract Guarantee</span>
+            <span>✓ 10-Year Master Builder Warranty</span>
+            <span>✓ Strictly Confidential Guidance</span>
+          </div>
+        </form>
+
+        <div id="design-enquiry-success" style="display: none; text-align: center; padding: 2.5rem 1.5rem;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #16a34a; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; font-size: 1.8rem;">
+            ✓
+          </div>
+          <h4 style="font-family: var(--font-editorial); font-size: 2rem; color: var(--text-dark); margin-bottom: 0.6rem;">Design Feasibility Brief Received</h4>
+          <p style="color: #57534E; font-size: 1rem; line-height: 1.7; max-width: 500px; margin: 0 auto 1.4rem;">
+            Thank you. Our Managing Director Marcus Vance and senior architectural siting team will review your homesite parameters and prepare an initial feasibility breakdown within 24 business hours.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-bronze);">
+            DIRECT CONCIERGE: <strong>0472 699 200</strong> • STRICTLY CONFIDENTIAL
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Master Site Footer -->
+    <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Studio -->
+        <div class="footer-col footer-col-brand">
+          <div>
+            <div class="footer-brand-wrap">
+              <img src="logo-white.png" alt="JS Construction Sydney" class="footer-brand-logo">
+              <div class="footer-brand-sub">Sydney Custom Builders</div>
+            </div>
+            <p class="footer-tagline">
+              Bespoke luxury custom homes, knockdown rebuilds &amp; dual occupancy developments across Sydney.
+            </p>
+            <div class="footer-contact-details">
+              <div>G.05, 25-29 Berry Street, North Sydney NSW 2060</div>
+              <div><a href="mailto:admin@jsconstructionsydney.com">admin@jsconstructionsydney.com</a></div>
+            </div>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="JS Construction on Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="JS Construction on LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="JS Construction on Pinterest">
+              <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.357-.053.218-.174.266-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="JS Construction on YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Core Services -->
+        <div class="footer-col footer-col-links">
+          <div>
+            <h4 class="footer-col-header">Core Services</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">Custom Home Building</a></li>
+              <li><a href="about.html">Knockdown Rebuilds</a></li>
+              <li><a href="about.html">Dual Occupancy &amp; Duplexes</a></li>
+              <li><a href="about.html">Class 1 &amp; 2 Townhouses</a></li>
+              <li><a href="index.html#inclusions">Turnkey Specifications</a></li>
+              <li><a href="index.html#designs">Architectural Floor Plans</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Sydney Portfolio -->
+        <div class="footer-col footer-col-links">
+          <div>
+            <h4 class="footer-col-header">Sydney Portfolio</h4>
+            <ul class="footer-links-list">
+              <li><a href="contact.html">North Sydney Head Studio</a></li>
+              <li><a href="completed-residences.html">78 Austral St, Panania</a></li>
+              <li><a href="completed-residences.html">Alliance Ave, Revesby</a></li>
+              <li><a href="completed-residences.html">Cronulla Coastal Pavilion</a></li>
+              <li><a href="completed-residences.html">Vaucluse Harbour Estate</a></li>
+              <li><a href="completed-residences.html">All Completed Residences</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 4: Direct Builder Line -->
+        <div class="footer-col footer-col-cta">
+          <div>
+            <h4 class="footer-col-header">Direct Builder Line</h4>
+            <div class="footer-builder-prompt">Speak directly with our directors:</div>
+            <div class="footer-builder-phone">
+              <a href="tel:0472699200">0472 699 200</a>
+            </div>
+            <div class="footer-builder-hours">
+              <span>Mon &ndash; Sat: 8:00 AM &ndash; 5:30 PM</span>
+              <span class="footer-builder-subtag">Sydney Metro &amp; Surrounds</span>
+            </div>
+          </div>
+          <div class="footer-cta-action">
+            <a href="#booking-modal" class="btn-pill-gold btn-open-booking" data-modal-open="booking-modal">
+              Book Consultation &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 JS CONSTRUCTION SYDNEY PTY LTD. ABN 36 649 889 350. ALL RIGHTS RESERVED.</div>
+        <div class="developer-credit-wrap">
+          <span>DESIGNED &amp; DEVELOPED BY</span>
+          <span class="ainex-badge">AINEX</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master VIP Booking Modal -->
+  <div class="modal-backdrop" id="booking-modal" aria-hidden="true" role="dialog">
+    <div class="booking-modal-card">
+      <button class="modal-close-btn" data-modal-close aria-label="Close modal">&times;</button>
+      
+      <div id="booking-form-container">
+        <div class="modal-eyebrow">PRIVATE APPOINTMENT • MBA MASTER BUILDER</div>
+        <h3 class="modal-title">Book a Private Residence Tour</h3>
+        <p class="modal-lead">Experience spatial volume, acoustic insulation, and handcrafted architectural joinery in person with an AURA senior construction director.</p>
+
+        <form id="vip-booking-form">
+          <div class="booking-form-grid">
+            <div>
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="booking-input" required placeholder="e.g. Lachlan &amp; Sarah Murdoch">
+            </div>
+
+            <div>
+              <label class="form-label">Australian Mobile *</label>
+              <input type="tel" class="booking-input" required placeholder="0400 000 000">
+            </div>
+
+            <div>
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="booking-input" required placeholder="name@domain.com.au">
+            </div>
+
+            <div>
+              <label class="form-label">Property or Design of Interest</label>
+              <select class="booking-select" id="booking-property-select">
+                <option value="the-sovereign">The Sovereign 62 (Display &amp; Design)</option>
+                <option value="the-lumina">The Lumina 48 (Coastal Single Storey)</option>
+                <option value="the-verdant">The Verdant 75 (Acreage Estate)</option>
+                <option value="the-monarch">The Monarch 54 (Modern Double Storey)</option>
+                <option value="the-elysian">The Elysian 42 (Single Storey)</option>
+                <option value="the-bellevue">The Bellevue 68 (Harbourfront)</option>
+                <option value="palm-beach">The Palm Beach Clifftop (Completed)</option>
+                <option value="brighton">The Brighton Glass Pavilion (Completed)</option>
+                <option value="byron-bay">The Byron Bay Hinterland (Completed)</option>
+                <option value="custom">Custom Architectural Build Consultation</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="form-label">Preferred Viewing Date</label>
+              <input type="date" class="booking-input" id="booking-date-input">
+            </div>
+
+            <div>
+              <label class="form-label">Preferred Time Slot</label>
+              <select class="booking-select">
+                <option value="10am">10:00 AM — Morning Light Walkthrough</option>
+                <option value="1pm">1:00 PM — Midday Architectural Inspection</option>
+                <option value="330pm">3:30 PM — Afternoon Sunset Viewing</option>
+                <option value="530pm">5:30 PM — Private Twilight Champagne Tour</option>
+              </select>
+            </div>
+
+            <div class="booking-field-full">
+              <label class="form-label">Land Status &amp; Location</label>
+              <select class="booking-select">
+                <option value="own-land">I own land / existing home to knockdown</option>
+                <option value="contract">Land currently under contract</option>
+                <option value="searching">Actively searching for a homesite</option>
+                <option value="display-only">Viewing display residences for design inspiration</option>
+              </select>
+            </div>
+
+            <div class="booking-field-full">
+              <label class="form-label">Specific Requirements / Notes (Optional)</label>
+              <textarea rows="2" class="booking-textarea" placeholder="Tell us about your block orientation, preferred completion year, or custom architectural requirements..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="booking-submit-btn">
+            Confirm Private Inspection Appointment &rarr;
+          </button>
+
+          <div class="booking-trust-strip">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2"/></svg>
+            <span>Strictly Confidential • Master Builders Association Member #409218 • No Obligation Guidance</span>
+          </div>
+        </form>
+
+        <div class="booking-success-box" id="booking-success-box">
+          <div class="booking-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4 style="font-family: var(--font-editorial); font-size: 2rem; color: var(--text-dark); margin-bottom: 0.8rem;">Tour Appointment Confirmed</h4>
+          <p style="color: #57534E; font-size: 1.05rem; line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem;">
+            Your private inspection request has been scheduled. An AURA Senior Client Director will contact you within 4 business hours with gate access instructions and host details.
+          </p>
+          <div style="background: #FFFFFF; border: 1px solid rgba(181, 148, 88, 0.4); border-radius: 12px; padding: 1rem 1.5rem; display: inline-block; font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-bronze); margin-bottom: 1.5rem;">
+            VIP PASS REFERENCE: <strong>AURA-VIP-2026</strong>
+          </div>
+          <div>
+            <button type="button" class="btn-pill-dark" data-modal-close>Return to Page</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Home Design Data Store (All bathroom numbers strictly integers!)
+    const homeDesignsData = {
+      'the-sovereign': {
+        title: 'The Sovereign 62',
+        category: 'SIGNATURE DOUBLE STOREY • COASTAL ARCHITECTURE',
+        price: '2,180,000',
+        desc: 'A grand modern Australian family residence balancing soaring light-filled living spaces, dual master suites, private quiet retreats, and seamless outdoor entertainment zones designed for everyday family life.',
+        beds: 5,
+        baths: 5,
+        cars: 4,
+        area: '720 m²',
+        width: '20.0 m',
+        storeys: 'Double Storey',
+        rooms: {
+          'foyer': { title: 'Foyer & Grand Atrium', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Great Living Pavilion', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Chef Kitchen & Scullery', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Master Wellness Suite', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Alfresco Terrace & Pool', img: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=85' }
+        }
+      },
+      'the-bellevue': {
+        title: 'The Bellevue 58',
+        category: 'CONTEMPORARY ENTERTAINER • DOUBLE STOREY',
+        price: '2,420,000',
+        desc: 'Sophisticated modern lines with natural limestone facades, subterranean 4-car gallery, private temperature-controlled wine cellar, and integrated heated lap pool.',
+        beds: 4,
+        baths: 4,
+        cars: 4,
+        area: '650 m²',
+        width: '18.5 m',
+        storeys: 'Double Storey',
+        rooms: {
+          'foyer': { title: 'Limestone Entry Courtyard', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Open Formal Living Room', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Calacatta Island Kitchen', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Spa-Inspired Ensuite', img: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Outdoor Magnesium Pool', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85' }
+        }
+      },
+      'the-elysian': {
+        title: 'The Elysian 70',
+        category: 'ULTRA LUXURY ESTATE • MULTI-LEVEL',
+        price: '3,150,000',
+        desc: 'Our flagship architectural statement featuring an internal glass lift, subterranean car gallery, private wellness sauna, and 6 full bedroom suites with private bathrooms.',
+        beds: 6,
+        baths: 6,
+        cars: 6,
+        area: '790 m²',
+        width: '24.0 m',
+        storeys: 'Multi-Level',
+        rooms: {
+          'foyer': { title: 'Triple-Height Atrium', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Grand Salon Living', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Double Chef Scullery', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Penthouse Master Wing', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Cantilevered Pool Terrace', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85' }
+        }
+      },
+      'the-lumina': {
+        title: 'The Lumina 52',
+        category: 'SINGLE LEVEL RETREAT • COASTAL MODERN',
+        price: '1,890,000',
+        desc: 'Effortless single-level luxury living with zero internal steps, high raked ceilings, central internal courtyard gardens, and serene master wing.',
+        beds: 4,
+        baths: 3,
+        cars: 3,
+        area: '580 m²',
+        width: '22.0 m',
+        storeys: 'Single Storey',
+        rooms: {
+          'foyer': { title: 'Courtyard Foyer Entry', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Sunken Living Lounge', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Island Living Kitchen', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Garden Facing Ensuite', img: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Sunlit Terrace Garden', img: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=85' }
+        }
+      },
+      'the-monarch': {
+        title: 'The Monarch 66',
+        category: 'DUAL LIVING LUXURY • MULTI-GENERATIONAL',
+        price: '2,680,000',
+        desc: 'Designed for multi-generational families, featuring a fully independent self-contained private guest wing with its own kitchen, living area, and private entrance.',
+        beds: 5,
+        baths: 5,
+        cars: 4,
+        area: '680 m²',
+        width: '21.5 m',
+        storeys: 'Double Storey',
+        rooms: {
+          'foyer': { title: 'Dual Entry Portico', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Main Living Pavilion', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Primary Culinary Suite', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Guest Suite Retreat', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Shared Garden Colonnade', img: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=85' }
+        }
+      },
+      'the-verdant': {
+        title: 'The Verdant 75',
+        category: 'ACREAGE ESTATE • CONTEMPORARY PAVILION',
+        price: '3,480,000',
+        desc: 'Sprawling wide-frontage pavilion home crafted with sustainable Australian hardwood timber, rammed earth thermal walls, and 360-degree native garden views.',
+        beds: 6,
+        baths: 5,
+        cars: 5,
+        area: '850 m²',
+        width: '38.0 m',
+        storeys: 'Pavilion Estate',
+        rooms: {
+          'foyer': { title: 'Timber Clad Glass Foyer', img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85' },
+          'living': { title: 'Panoramic Mountain Living', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85' },
+          'kitchen': { title: 'Country Modern Scullery', img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85' },
+          'master': { title: 'Hinterland View Ensuite', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85' },
+          'alfresco': { title: 'Loggia & Acreage Lap Pool', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85' }
+        }
+      }
+    };
+
+    // Initialize Page Content based on URL query param ?id=
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id') || 'the-sovereign';
+      const data = homeDesignsData[id] || homeDesignsData['the-sovereign'];
+
+      // Populate Headings & Text
+      document.title = data.title + ' — Home Design | AURA Architectural Homes';
+      document.getElementById('breadcrumb-design-title').textContent = data.title;
+      document.getElementById('design-title').textContent = data.title;
+      document.getElementById('design-category').textContent = data.category;
+      document.getElementById('design-desc').textContent = data.desc;
+      document.getElementById('design-price-val').textContent = data.price;
+
+      // Populate Specs (Strictly integer numbers for bathrooms!)
+      document.getElementById('spec-beds').textContent = data.beds;
+      document.getElementById('spec-baths').textContent = data.baths;
+      document.getElementById('spec-cars').textContent = data.cars;
+      document.getElementById('spec-area').textContent = data.area;
+      document.getElementById('spec-width').textContent = data.width;
+      document.getElementById('spec-storeys').textContent = data.storeys;
+
+      // Setup 3D Virtual Tour Viewer
+      const tourScreenImg = document.getElementById('tour-screen-img');
+      const tourRoomTitle = document.getElementById('tour-room-title');
+      const tourRoomButtons = document.querySelectorAll('.tour-room-btn');
+
+      tourRoomButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tourRoomButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const roomKey = btn.getAttribute('data-room');
+          if (data.rooms && data.rooms[roomKey]) {
+            tourScreenImg.style.opacity = '0.3';
+            setTimeout(() => {
+              tourScreenImg.src = data.rooms[roomKey].img;
+              tourRoomTitle.textContent = data.rooms[roomKey].title;
+              tourScreenImg.style.opacity = '1';
+            }, 150);
+          }
+        });
+      });
+
+      // Floor Plan Tab Switching (Ground Floor vs First Floor CAD)
+      const tabGround = document.getElementById('tab-btn-ground');
+      const tabFirst = document.getElementById('tab-btn-first');
+      const groundPlanView = document.getElementById('ground-plan-view');
+      const firstPlanView = document.getElementById('first-plan-view');
+      const planTitle = document.getElementById('design-plan-title');
+      const planDesc = document.getElementById('design-plan-desc');
+      const roomsContainer = document.getElementById('plan-rooms-container');
+
+      if (tabGround && tabFirst) {
+        tabGround.addEventListener('click', () => {
+          tabGround.classList.add('active');
+          tabFirst.classList.remove('active');
+          groundPlanView.style.display = 'block';
+          firstPlanView.style.display = 'none';
+
+          planTitle.textContent = 'Ground Floor Living & Alfresco';
+          planDesc.textContent = 'Designed for effortless family living. Wide glass sliding doors open to the garden and pool, while the separate home cinema allows family members to relax without noise travelling to bedroom areas.';
+          roomsContainer.innerHTML = `
+            <li><span class="room-name">Great Living &amp; Dining Room</span><span class="room-dim">11.4m × 6.8m (77 m²)</span></li>
+            <li><span class="room-name">Chef Kitchen &amp; Butler's Pantry</span><span class="room-dim">6.0m × 4.5m (27 m²)</span></li>
+            <li><span class="room-name">Private Home Cinema</span><span class="room-dim">5.8m × 4.4m (25 m²)</span></li>
+            <li><span class="room-name">Covered Alfresco &amp; Outdoor Kitchen</span><span class="room-dim">8.2m × 4.8m (39 m²)</span></li>
+            <li><span class="room-name">4-Car Garage &amp; Workshop Bay</span><span class="room-dim">9.6m × 6.8m (65 m²)</span></li>
+            <li><span class="room-name">Grand Foyer &amp; Gallery Atrium</span><span class="room-dim">4.8m × 3.6m (17 m²)</span></li>
+          `;
+        });
+
+        tabFirst.addEventListener('click', () => {
+          tabFirst.classList.add('active');
+          tabGround.classList.remove('active');
+          groundPlanView.style.display = 'none';
+          firstPlanView.style.display = 'block';
+
+          planTitle.textContent = 'First Floor Executive Master & Family Suites';
+          planDesc.textContent = 'The upper sanctuary level. The private master wing enjoys an expansive dressing room and freestanding bath ensuite, accompanied by three oversized junior bedroom suites and a central lounge retreat.';
+          roomsContainer.innerHTML = `
+            <li><span class="room-name">Master Penthouse Suite</span><span class="room-dim">7.4m × 5.2m (38 m²)</span></li>
+            <li><span class="room-name">Walk-In Dressing Room</span><span class="room-dim">4.8m × 3.4m (16 m²)</span></li>
+            <li><span class="room-name">Freestanding Bath Ensuite</span><span class="room-dim">5.2m × 3.8m (20 m²)</span></li>
+            <li><span class="room-name">Children's Lounge Retreat</span><span class="room-dim">6.2m × 4.6m (29 m²)</span></li>
+            <li><span class="room-name">Bedroom 2 with Private Ensuite</span><span class="room-dim">4.5m × 4.2m (19 m²)</span></li>
+            <li><span class="room-name">Bedrooms 3 &amp; 4 with Dual Vanity</span><span class="room-dim">4.4m × 4.0m (18 m² each)</span></li>
+          `;
+        });
+      }
+
+      // On-Page Feasibility Form Submission
+      const enquiryForm = document.getElementById('design-enquiry-form');
+      const enquirySuccess = document.getElementById('design-enquiry-success');
+      if (enquiryForm && enquirySuccess) {
+        enquiryForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          enquiryForm.style.display = 'none';
+          enquirySuccess.style.display = 'block';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
